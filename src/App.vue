@@ -1,12 +1,22 @@
 <template>
     <img alt="menu de l'escape game" class="test" src="./assets/menu.jpg" />
   <v-icon size="large" color="green-darken-2" icon="mdi-information" />
+  <main>    
+    <router-view/>
+  </main>
+  <footer>
+    <AppFooter></AppFooter>
+  </footer>
 </template>
 
 <script>
+import AppFooter from '@/components/AppFooter.vue';
+
 export default {
   name: "App",
-  components: {},
+  components: {
+    AppFooter
+  }
 };
 </script>
 
