@@ -22,11 +22,26 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.center-container {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+.image-container {
+  max-width: 100%;
+  max-height: 100%;
+  transform: scale(0.9);
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  height: 100%;
 }
 </style>
