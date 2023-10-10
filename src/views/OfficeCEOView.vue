@@ -1,25 +1,53 @@
 <template>
   <div class="image-background container" :style="backgroundImageStyle">
-    <h2>Mon Composant avec Image en Arrière-Plan</h2>
-    <p>Ceci est le contenu de mon composant.</p>
+      <v-btn
+          class="clickable-area"
+      >
+
+      <v-dialog
+          v-model="dialog"
+          activator="parent"
+      >
+          <v-card>
+              <v-card-text>
+                  "Blablabla"
+              </v-card-text>
+              <v-card-actions>
+                  <v-btn color="primary" block @click="dialog = false">Fermer</v-btn>
+              </v-card-actions>
+          </v-card>
+      </v-dialog>
+  </v-btn>
   </div>
+
+  
 </template>
+
 <script>
 export default {
-data() {
-  return {
-    imageUrl: require('@/assets/CEO.jpg'),
-  };
-},
-computed: {
-  backgroundImageStyle() {
+  data() {
     return {
-      backgroundImage: `url(${this.imageUrl})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center center',
+      imageUrl: require('../assets/CEO.jpg'),
+      dialog: false,
     };
   },
-},
+  computed: {
+    backgroundImageStyle() {
+      return {
+        backgroundImage: `url(${this.imageUrl})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+      };
+    },
+  },
+  methods: {
+      openModal() {
+          this.isModalOpen = true;
+      },
+      closeModal() {
+          this.isModalOpen = false;
+      },
+  },
 };
 </script>
 
@@ -27,16 +55,23 @@ computed: {
 .image-background {
   width: 100%;
   height: 100%;
-  text-align: center;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-.image-background h2, .image-background p {
-  width: 400px;
+.clickable-area {
+  position: absolute; 
+  top: 45vh; 
+  left: 52vw;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  padding: 40px;
+  box-shadow: none;
 }
+
+/* clickable hover ovveride all */
+  .clickable-area:hover {
+      background-color: rgba(0, 0, 0, 0);
+      box-shadow: none;
+      cursor: default;
+  }
 
 </style>

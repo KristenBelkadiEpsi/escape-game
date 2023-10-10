@@ -59,8 +59,8 @@
   
   .clickable-area {
     position: absolute; 
-    top: 100px; 
-    left: 200px;
+    top: 7vh; 
+    left: 20vw;
     background-color: rgba(0, 0, 0, 0);
     color: white;
     padding: 100px;
