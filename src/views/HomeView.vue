@@ -1,6 +1,8 @@
 <template>
   <div>
-    <header><AppNavigation></AppNavigation></header>
+    <header>
+      <AppNavigation></AppNavigation>
+    </header>
     <div class="image-background container" :style="backgroundImageStyle">
       <div class="navigation-buttons">
         <router-link to="/salleRepos">
@@ -16,17 +18,23 @@
           <v-btn class="nav-btn" id="btn-MeetingRoom">Salle de Réunion</v-btn>
         </router-link>
       </div>
+      <div>
+        <v-btn @click="showGuessModal">Devinez Qui</v-btn>
+        <GuessModal @guess-submitted="handleGuessSubmitted" ref="guessModal" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import AppNavigation from '@/components/AppNavigation.vue';
+import GuessModal from '@/components/GuessModal.vue'; // Assurez-vous d'importer correctement le composant
 
 export default {
   name: 'HomeView',
   components: {
     AppNavigation,
+    GuessModal,
   },
   data() {
     return {
@@ -40,6 +48,19 @@ export default {
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
       };
+    },
+  },
+  methods: {
+    showGuessModal() {
+      console.log(this.$refs)
+      this.$refs.guessModal.show();
+    },
+    closeGuessModal() {
+      this.$refs.guessModal.hide();
+    },
+    handleGuessSubmitted(guess) {
+      // Traitement de la supposition ici (appelez votre fonction)
+      console.log('Supposition soumise :', guess);
     },
   },
 };
@@ -56,27 +77,27 @@ export default {
 
 #btn-breakRoom {
   position: absolute;
-  top: 220px; 
+  top: 220px;
   right: 15%;
 }
 
 #btn-CEOOffice {
   position: relative;
-  top: 110px; 
+  top: 110px;
   left: 60px;
 }
 
 #btn-MeetingRoom {
   position: absolute;
   bottom: 85px;
-  left: 50%; 
+  left: 50%;
   transform: translateX(-50%);
 }
 
 #btn-HROffice {
   position: absolute;
   bottom: 100px;
-  right: 10%; 
+  right: 10%;
   transform: translateX(-50%);
 }
 
@@ -84,8 +105,8 @@ export default {
 .nav-btn:hover {
   background-color: #D4AF37 !important;
 }
+
 .nav-btn {
-  background-color: #0e5e0b  !important;
+  background-color: #0e5e0b !important;
   color: white !important;
-}
-</style>
+}</style>
