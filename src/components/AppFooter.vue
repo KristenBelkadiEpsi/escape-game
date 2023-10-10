@@ -2,7 +2,7 @@
     <div class="container-fluid bg-light">
         <div class="row">
             <div class="col">
-                <p class="footer_text">@2023 | Workshop EPSI NANTES | Mentions Légales </p>
+                <p class="footer_text">@2023 | Workshop EPSI NANTES | Mentions Légales</p>
             </div>
         </div>
     </div>
