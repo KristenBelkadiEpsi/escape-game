@@ -11,7 +11,17 @@
         >
             <v-card>
                 <v-card-text>
-                    "J'ai été témoin d'une situation au bureau où une personne était harcelée verbalement par un collègue. La victime semblait très mal à l'aise, mais personne n'a osé intervenir. J'ai signalé l'incident au service des ressources humaines pour espérer résoudre la situation et prévenir de futurs cas de harcèlement."
+ José : (soupire) "Tu sais, je ne peux plus supporter le comportement de X en réunion." <br/>
+
+Gilbert : "Je sais exactement ce que tu veux dire. Il devient de pire en pire. À chaque fois qu'il parle, c'est comme s'il cherchait à rabaisser tout le monde." <br/>
+
+José : "Et les insultes... Il a même osé me critiquer devant tout le monde la semaine dernière. Je n'en peux plus de ses remarques désobligeantes." <br/>
+
+Gilbert : "Exactement. Il pense qu'il est le meilleur, qu'il sait tout mieux que nous. C'est insupportable. Et ce n'est pas seulement en réunion. Il me traite comme si j'étais incompétent dans le couloir, devant tout le monde." <br/>
+
+José : (fronce les sourcils) "Et il a ce regard, tu sais ? Comme s'il te jugeait en permanence." <br/>
+
+Gilbert : "Oui, c'est comme s'il voulait nous faire sentir mal. Ça me met vraiment mal à l'aise." 
                 </v-card-text>
                 <v-card-actions>
                     <v-btn color="primary" block @click="dialog = false">Fermer</v-btn>

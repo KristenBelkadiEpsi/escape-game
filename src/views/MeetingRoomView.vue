@@ -11,7 +11,18 @@
       >
           <v-card>
               <v-card-text>
-                  " "
+
+                  Réunion d'équipe du 15/09/2023 :<br/>
+
+- X  a encore été agressif envers l'équipe aujourd'hui. Il a utilisé des mots offensants et a crié contre l’équipe en public. Cela devient insupportable." <br/>
+
+"Notes de la réunion du 22/09/2023 <br/>
+
+- X continue de faire des commentaires déplacés lors des réunions. Il a ridiculisé Mike et a créé un climat de tension. Les employés sont mécontents." <br/>
+
+"Résumé de la réunion du 29/09/2023 <br/>
+
+- Lors de la réunion d'aujourd'hui, X a insulté Janet et a utilisé un langage inapproprié. Plusieurs employés ont exprimé leur malaise et leur inquiétude quant à son comportement. <br/>
               </v-card-text>
               <v-card-actions>
                   <v-btn color="primary" block @click="dialog = false">Fermer</v-btn>

@@ -12,7 +12,7 @@
           <v-btn class="nav-btn" id="btn-CEOOffice">Bureau de PDG</v-btn>
         </router-link>
         <router-link to="/bureauRH">
-          <v-btn class="nav-btn" id="btn-HROffice">Bureau des HR</v-btn>
+          <v-btn class="nav-btn" id="btn-HROffice">Bureau des RH</v-btn>
         </router-link>
         <router-link to="/salleReunion">
           <v-btn class="nav-btn" id="btn-MeetingRoom">Salle de Réunion</v-btn>

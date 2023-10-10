@@ -11,7 +11,22 @@
       >
           <v-card>
               <v-card-text>
-                  "Blablabla"
+                À : L’équipe De : Didier le patron  Date : 02/10/2023 <br/>
+
+Objet : Réclamation d'un employé <br/>
+
+Cher Gisèle, <br/>
+
+J'ai récemment été informé des préoccupations soulevées par un employé au sujet de problèmes au sein de l'équipe. Je tenais à vous en informer pour que nous puissions suivre la situation. 
+
+Cependant, je dois dire que, selon mon point de vue, ces allégations semblent être le résultat de tensions normales dans un environnement de travail dynamique. Nous ne devrions pas surestimer ces problèmes ni y accorder une attention démesurée. Après tout, les conflits et les désaccords surviennent de temps en temps dans n'importe quelle organisation. 
+
+Je suggère que vous traitiez cette affaire de manière discrète et que vous rassuriez l'employé concerné en lui expliquant que nous prenons tous les problèmes au sérieux. Cependant, je ne pense pas qu'il soit nécessaire de lancer une enquête approfondie à ce stade. 
+
+Restons concentrés sur nos objectifs principaux et veillons à ce que cette situation ne perturbe pas notre activité. <br/>
+
+Cordialement, <br/>
+Didier le Patron 
               </v-card-text>
               <v-card-actions>
                   <v-btn color="primary" block @click="dialog = false">Fermer</v-btn>
