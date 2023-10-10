@@ -23,7 +23,7 @@
 <script>
 const axios = require("axios");
 const axiosInstance = axios.create({
-  baseURL: `http://127.0.0.1:8080`,
+  baseURL: `https://spring-app-20231010160948.ambitiouscliff-a8482ead.westeurope.azurecontainerapps.io`,
 });
 export default {
   data() {
