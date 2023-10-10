@@ -33,10 +33,14 @@
     <p>Une fois que les participants ont terminé toutes les pièces et ont résolu les défis liés au harcèlement au travail, le jeu se termine avec un message sur l'importance de la prévention du harcèlement au travail et de la création d'un environnement de travail sûr et inclusif pour tous.</p>
   </div>
   </div>
+  <BackToHomeButton />
+    <div class="container-fluid">
+        <h1>régles du jeu</h1>
+    </div>
 </template>
 
 <script>
-import AppNavigation from '@/components/AppNavigation.vue'
+import AppNavigation from '@/components/AppNavigation.vue';
 
 export default {
   name: 'GameRulesView',

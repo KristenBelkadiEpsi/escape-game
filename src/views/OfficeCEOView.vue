@@ -1,4 +1,5 @@
 <template>
+  <BackToHomeButton />
   <div class="image-background container" :style="backgroundImageStyle">
       <v-btn
           class="clickable-area"
@@ -24,7 +25,11 @@
 </template>
 
 <script>
+import BackToHomeButton from '@/components/BackToHomeButton.vue';
 export default {
+  components: {
+        BackToHomeButton
+    },
   data() {
     return {
       imageUrl: require('../assets/CEO.jpg'),
