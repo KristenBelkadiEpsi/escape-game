@@ -8,7 +8,7 @@
           </button>
         </div>
         <div class='col-2 p-2'>
-        <a aria-current="page" href="/"><img class='icon' alt="logo" src="@/assets/key.png"></a>
+        <a aria-current="page" href="/"><img class='icon' alt="logo" src="@/assets/key.jpg"></a>
         </div>
         <div class='col-7'>
           <p class='text'>Escape ton harcèlement</p>

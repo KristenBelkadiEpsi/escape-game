@@ -34,9 +34,6 @@
   </div>
   </div>
   <BackToHomeButton />
-    <div class="container-fluid">
-        <h1>régles du jeu</h1>
-    </div>
 </template>
 
 <script>
