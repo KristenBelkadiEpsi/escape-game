@@ -1,10 +1,8 @@
 <template>
-    <img alt="menu de l'escape game" class="test" src="./assets/menu.jpg" />
-  <v-icon size="large" color="green-darken-2" icon="mdi-information" />
-  <main>    
+  <main class="main-height">    
     <router-view/>
   </main>
-  <footer>
+  <footer class="footer-height">
     <AppFooter></AppFooter>
   </footer>
 </template>
@@ -22,9 +20,6 @@ export default {
 
 <style>
 #app {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
   overflow: hidden;
 }
@@ -33,15 +28,13 @@ export default {
   text-align: center;
 }
 
-.image-container {
-  max-width: 100%;
-  max-height: 100%;
-  transform: scale(0.9);
-  overflow: hidden;
+.main-height {
+  height: 95%;
+  margin: 0;
+  padding: 0;
 }
 
-img {
-  width: 100%;
-  height: 100%;
+.footer-height {
+  height: 5%;
 }
 </style>
