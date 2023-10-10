@@ -3,9 +3,21 @@
         <v-card>
             <v-card-title class="headline">Devinez qui a fait quoi</v-card-title>
             <v-card-text>
-                <v-text-field v-model="who" label="Qui"></v-text-field>
-                <v-text-field v-model="what" label="Quoi"></v-text-field>
-                <v-text-field v-model="where" label="Où"></v-text-field>
+                <v-select
+                    v-model="who"
+                    :items="['Sid', 'Gisele', 'José', 'Léa', 'Didier', 'Andy']"
+                    label="Qui"
+                ></v-select>
+                <v-select
+                    v-model="where"
+                    :items="['Bureau de PDG', 'Salle de réunion', 'Salle de repos', 'Bureau des HR']"
+                    label="Où"
+                ></v-select>
+                <v-select
+                    v-model="what"
+                    :items="['Harcèlement moral', 'Harcèlement physique', 'Aggression sexuelle', 'Aggression verbale']"
+                    label="Quoi"
+                ></v-select>
             </v-card-text>
             <v-card-actions>
                 <v-spacer></v-spacer>
@@ -24,8 +36,13 @@ function cleanString(input) {
 }
 
 function verifyGuess(cleanedGuess, $router) {
-    if (cleanedGuess.who === "Sid" && cleanedGuess.what === "harcelement moral" && cleanedGuess.where === "salle de reunion") {
+    console.log(cleanedGuess);
+    if (cleanedGuess.who === "andy" && cleanedGuess.what === "harcelement moral" && cleanedGuess.where === "salle de reunion") {
         $router.push({ name: 'scoreboard' });
+    }
+    else {
+        //modale d'erreur
+        alert("Mauvaise réponse");
     }
 }
 export default {
