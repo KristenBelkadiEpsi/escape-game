@@ -21,7 +21,7 @@ const  routes = [
     {
       path: '/bureauPDG',
       name: 'Bureau du PDG',
-      component: () => import('../views/OfficePDGView.vue')
+      component: () => import('../views/OfficeCEOView.vue')
     },
     {
       path: '/salleReunion',

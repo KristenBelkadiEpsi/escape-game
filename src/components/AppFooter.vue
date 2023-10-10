@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid bg-light mt-5">
+    <div class="container-fluid bg-light">
         <div class="row">
             <div class="col">
                 <p class="footer_text">@2023 | Workshop EPSI NANTES | Mentions Légales </p>
