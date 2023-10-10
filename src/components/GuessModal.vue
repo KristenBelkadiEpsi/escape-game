@@ -24,7 +24,7 @@ function cleanString(input) {
 }
 
 function verifyGuess(cleanedGuess, $router) {
-    if (cleanedGuess.who === ".." && cleanedGuess.what === ".." && cleanedGuess.where === "..") {
+    if (cleanedGuess.who === "Sid" && cleanedGuess.what === "harcelement moral" && cleanedGuess.where === "salle de reunion") {
         $router.push({ name: 'scoreboard' });
     }
 }
