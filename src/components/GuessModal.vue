@@ -5,7 +5,7 @@
             <v-card-text>
                 <v-select
                     v-model="who"
-                    :items="['Sid', 'Gisele', 'José', 'Léa', 'Didier', 'Andy']"
+                    :items="['Sid', 'Gisele', 'José', 'Gilbert', 'Didier', 'Andy']"
                     label="Qui"
                 ></v-select>
                 <v-select
