@@ -59,9 +59,13 @@ export default {
             const user = {
                 nom: localStorage.getItem('playerName'),
                 email: localStorage.getItem('playerEmail'),
-                score: parseInt(localStorage.getItem('timeSpent')),
+                score: parseInt(localStorage.getItem('timeSpent') / 1000),
             };
-            await axiosInstance.post("/creerUtilisateur", user);
+            const reponse = await axiosInstance.post("/creerUtilisateur", user);
+            this.sendEmail(reponse);
+        },
+        async sendEmail(id){
+            await axiosInstance.post("/envoiMail/" + id);
         },
         verifyGuess(cleanedGuess) {
             if (cleanedGuess.who === "andy" && cleanedGuess.what === "harcelement moral" && cleanedGuess.where === "salle de reunion") {
