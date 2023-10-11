@@ -59,17 +59,14 @@ export default {
             const user = {
                 nom: localStorage.getItem('playerName'),
                 email: localStorage.getItem('playerEmail'),
-                score: localStorage.getItem('timeSpent'),
+                score: parseInt(localStorage.getItem('timeSpent')),
             };
             await axiosInstance.post("/creerUtilisateur", user);
         },
         verifyGuess(cleanedGuess) {
             if (cleanedGuess.who === "andy" && cleanedGuess.what === "harcelement moral" && cleanedGuess.where === "salle de reunion") {
                 localStorage.setItem('endTime', new Date().getTime());
-                console.log('endTime = ' + localStorage.getItem('endTime'))
-                console.log('gameStart = ' + localStorage.getItem('gameStart'))
                 localStorage.setItem('timeSpent', localStorage.getItem('endTime') - localStorage.getItem('gameStart'));
-                console.log(localStorage.getItem('timeSpent'));
                 this.createUser();
                 this.$router.push({ name: 'scoreboard' });
             }

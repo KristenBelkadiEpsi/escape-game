@@ -22,19 +22,21 @@
   
 <script>
 export default {
-  data() {
-    return {
-      dialog: false,
-      playerName: '',
-      playerEmail: '',
-    };
-  },
-  methods: {
-    startGame() {
-      localStorage.setItem('hasSeenSummaryModal', 'true');
-      localStorage.setItem('gameStart', new Date().getTime());
-      this.$emit('start-game');
+    data() {
+        return {
+            dialog: false,
+            playerName: '',
+            playerEmail: '',
+        };
     },
-  },
+    methods: {
+        startGame() {
+            localStorage.setItem('hasSeenSummaryModal', 'true');
+            localStorage.setItem('gameStart', new Date().getTime());
+            localStorage.setItem('playerName', this.playerName);
+            localStorage.setItem('playerEmail', this.playerEmail);
+            this.$emit('start-game');
+        },
+    },
 };
 </script>
