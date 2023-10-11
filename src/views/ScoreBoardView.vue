@@ -6,7 +6,7 @@
         <thead>
           <tr>
             <th>Utilisateur</th>
-            <th>Score</th>
+            <th>Temps</th>
           </tr>
         </thead>
         <tbody>
@@ -23,7 +23,7 @@
 <script>
 const axios = require("axios");
 const axiosInstance = axios.create({
-  baseURL: `https://spring-app-20231010160948.ambitiouscliff-a8482ead.westeurope.azurecontainerapps.io`,
+  baseURL: `http://127.0.0.1:8080/api`,
 });
 export default {
   data() {
@@ -36,8 +36,10 @@ export default {
   },
   methods: {
     async getUsers() {
-      axiosInstance.get("/user/utilisateurs").then((reponse) => {
-        this.users = reponse.data;
+      axiosInstance.get("/utilisateurs").then((reponse) => {
+        console.log(reponse.data)
+        this.users = reponse.data.map((e) => new Date(e));
+        console.log(this.users)
       });
     },
   },
