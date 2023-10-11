@@ -19,6 +19,9 @@
         </router-link>
       </div>
       <div>
+        <SummaryModal v-model="summaryDialog" @start-game="closeSummaryModal" />
+      </div>
+      <div>
         <v-btn @click="showGuessModal">Devinez Qui</v-btn>
         <GuessModal @guess-submitted="handleGuessSubmitted" ref="guessModal" />
       </div>
@@ -27,40 +30,52 @@
 </template>
 
 <script>
-import AppNavigation from '@/components/AppNavigation.vue';
-import GuessModal from '@/components/GuessModal.vue'; // Assurez-vous d'importer correctement le composant
+import AppNavigation from "@/components/AppNavigation.vue";
+import GuessModal from "@/components/GuessModal.vue";
+import SummaryModal from "@/components/SummaryModal.vue";
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
     AppNavigation,
     GuessModal,
+    SummaryModal,
   },
   data() {
     return {
-      imageUrl: require('../assets/menu.jpg'),
+      imageUrl: require("../assets/menu.jpg"),
+      summaryDialog: false,
+      playerName: "",
+      playerEmail: "",
     };
   },
   computed: {
     backgroundImageStyle() {
       return {
         backgroundImage: `url(${this.imageUrl})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center center',
+        backgroundSize: "cover",
+        backgroundPosition: "center center",
       };
     },
   },
+  created() {
+    this.showSummaryModal();
+  },
   methods: {
     showGuessModal() {
-      console.log(this.$refs)
       this.$refs.guessModal.show();
     },
     closeGuessModal() {
       this.$refs.guessModal.hide();
     },
-    handleGuessSubmitted(guess) {
-      // Traitement de la supposition ici (appelez votre fonction)
-      console.log('Supposition soumise :', guess);
+    showSummaryModal() {
+      const hasSeenModal = localStorage.getItem("hasSeenSummaryModal");
+      if (!hasSeenModal) {
+        this.summaryDialog = true;
+      }
+    },
+    closeSummaryModal() {
+      this.summaryDialog = false;
     },
   },
 };
@@ -101,7 +116,6 @@ export default {
   transform: translateX(-50%);
 }
 
-
 .nav-btn:hover {
   background-color: #D4AF37 !important;
 }
@@ -109,4 +123,5 @@ export default {
 .nav-btn {
   background-color: #0e5e0b !important;
   color: white !important;
-}</style>
+}
+</style>

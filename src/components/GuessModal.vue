@@ -28,6 +28,10 @@
 </template>
   
 <script>
+const axios = require("axios");
+const axiosInstance = axios.create({
+  baseURL: `http://localhost:8081/api`,
+});
 
 function cleanString(input) {
     const withoutAccents = input.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -35,16 +39,6 @@ function cleanString(input) {
     return cleanedString;
 }
 
-function verifyGuess(cleanedGuess, $router) {
-    console.log(cleanedGuess);
-    if (cleanedGuess.who === "andy" && cleanedGuess.what === "harcelement moral" && cleanedGuess.where === "salle de reunion") {
-        $router.push({ name: 'scoreboard' });
-    }
-    else {
-        //modale d'erreur
-        alert("Mauvaise réponse");
-    }
-}
 export default {
     data() {
         return {
@@ -61,6 +55,28 @@ export default {
         hide() {
             this.dialog = false;
         },
+        async createUser() {
+            const user = {
+                nom: localStorage.getItem('playerName'),
+                email: localStorage.getItem('playerEmail'),
+                score: localStorage.getItem('timeSpent'),
+            };
+            await axiosInstance.post("/creerUtilisateur", user);
+        },
+        verifyGuess(cleanedGuess) {
+            if (cleanedGuess.who === "andy" && cleanedGuess.what === "harcelement moral" && cleanedGuess.where === "salle de reunion") {
+                localStorage.setItem('endTime', new Date().getTime());
+                console.log('endTime = ' + localStorage.getItem('endTime'))
+                console.log('gameStart = ' + localStorage.getItem('gameStart'))
+                localStorage.setItem('timeSpent', localStorage.getItem('endTime') - localStorage.getItem('gameStart'));
+                console.log(localStorage.getItem('timeSpent'));
+                this.createUser();
+                this.$router.push({ name: 'scoreboard' });
+            }
+            else {
+                alert("Mauvaise réponse");
+            }
+        },
         submitGuess() {
             const cleanedGuess = {
                 who: cleanString(this.who),
@@ -68,19 +84,19 @@ export default {
                 where: cleanString(this.where),
             };
 
-            verifyGuess(cleanedGuess, this.$router);
+            this.verifyGuess(cleanedGuess);
 
-            // Réinitialisez les champs texte après la soumission
             this.who = '';
             this.what = '';
             this.where = '';
+            localStorage.clear();                     
 
-            // Fermez la modal
             this.hide();
         },
     }
 };
 </script>
+
 <style scoped>
 .v-card-actions {
     display: flex;
