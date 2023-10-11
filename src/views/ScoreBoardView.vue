@@ -38,7 +38,7 @@ export default {
     async getUsers() {
       axiosInstance.get("/utilisateurs").then((reponse) => {
         console.log(reponse.data)
-        this.users = reponse.data.map((e) => new Date(e));
+        this.users = reponse.data;
         console.log(this.users)
       });
     },
