@@ -61,8 +61,8 @@ export default {
                 email: localStorage.getItem('playerEmail'),
                 score: parseInt(localStorage.getItem('timeSpent') / 1000),
             };
-            const reponse = await axiosInstance.post("/creerUtilisateur", user);
-            this.sendEmail(reponse);
+            const response = await axiosInstance.post("/creerUtilisateur", user);
+            this.sendEmail(response.data);
         },
         async sendEmail(id){
             await axiosInstance.post("/envoiMail/" + id);
