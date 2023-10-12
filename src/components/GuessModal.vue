@@ -30,7 +30,8 @@
 <script>
 const axios = require("axios");
 const axiosInstance = axios.create({
-  baseURL: `http://0.0.0.0:53000/api`,
+    baseURL: `http://127.0.0.1:8080/api`,
+
 });
 
 function cleanString(input) {
@@ -73,6 +74,7 @@ export default {
                 localStorage.setItem('timeSpent', localStorage.getItem('endTime') - localStorage.getItem('gameStart'));
                 await this.createUser();
                 this.$router.push({ name: 'scoreboard' });
+                localStorage.clear();  
             }
             else {
                 alert("Mauvaise réponse");
@@ -90,7 +92,7 @@ export default {
             this.who = '';
             this.what = '';
             this.where = '';
-            localStorage.clear();                     
+                              
 
             this.hide();
         },
