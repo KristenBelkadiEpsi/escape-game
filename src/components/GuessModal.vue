@@ -67,11 +67,11 @@ export default {
         async sendEmail(id){
             await axiosInstance.post("/envoiMail/" + id);
         },
-        verifyGuess(cleanedGuess) {
+        async verifyGuess(cleanedGuess) {
             if (cleanedGuess.who === "andy" && cleanedGuess.what === "harcelement moral" && cleanedGuess.where === "salle de reunion") {
                 localStorage.setItem('endTime', new Date().getTime());
                 localStorage.setItem('timeSpent', localStorage.getItem('endTime') - localStorage.getItem('gameStart'));
-                this.createUser();
+                await this.createUser();
                 this.$router.push({ name: 'scoreboard' });
             }
             else {
